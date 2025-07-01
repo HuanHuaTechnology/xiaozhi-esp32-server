@@ -38,7 +38,7 @@ server:
   # 当你使用docker部署或使用公网部署(使用ssl、域名)时，不一定准确
   # 所以如果你使用docker部署时，将websocket设置成局域网地址
   # 如果你使用公网部署时，将vwebsocket设置成公网地址
-  websocket: ws://你的ip或者域名:端口号/xiaozhi/v1/
+  websocket: ws://47.106.223.155:8000/xiaozhi/v1/
   # 视觉分析接口地址
   # 向设备发送的视觉分析的接口地址
   # 如果按下面默认的写法，系统会自动生成视觉识别地址，并输出在启动日志里，这个地址你可以直接用浏览器访问确认一下
@@ -60,8 +60,8 @@ server:
       - token: "your-token2"  # 设备2的token
         name: "your-device-name2" # 设备2标识
     # 可选:设备白名单，如果设置了白名单，那么白名单的机器无论是什么token都可以连接。
-    #allowed_devices:
-    #  - "24:0A:C4:1D:3B:F0"  # MAC地址列表
+    allowed_devices:
+      - "19:13:6A:AC:06:2D"  # MAC地址列表
 log:
   # 设置控制台输出的日志格式，时间、日志级别、标签、消息
   log_format: "<green>{time:YYMMDD HH:mm:ss}</green>[{version}_{selected_module}][<light-blue>{extra[tag]}</light-blue>]-<level>{level}</level>-<light-green>{message}</light-green>"
